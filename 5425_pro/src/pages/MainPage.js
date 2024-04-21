@@ -9,7 +9,19 @@ const MainPage = () => {
                 <NavBar />
             </div>
             <div className="content">
-                
+                <div className="gallery">
+                    <div className="product">
+                        <div className="product-image">Image 1</div>
+                        <div className="product-details">
+                            <div>Detail 1</div>
+                            <div>Detail 2</div>
+                            <div>Detail 3</div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
             </div>
         </div >
     )

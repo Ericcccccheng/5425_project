@@ -1,6 +1,6 @@
 import React from 'react';
 import MainPage from './pages/MainPage';
-import Request from './pages/Request';
+import Spring from './pages/cate_spring';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<MainPage/>} />
-          <Route path="/request" element={<Request />} />
+          <Route path="/cate_spring" element={<Spring />} />
           <Route path="/main" element={<MainPage />} />
          
         </Routes>
