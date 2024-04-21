@@ -71,7 +71,7 @@ const NavBar = () => {
                     <div className="button-container">
                         <div className="column">
                             <Link to="/toSpring"> 
-                            <button>Button 1</button>
+                            <button>Spring</button>
                             </Link>
                             <button>Button 2</button>
                             <button>Button 3</button>

@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import "../css/MainPage.css"
+import "../css/cate_spring.css";
+import ImageCard from "../components/ImageCard";
 
 const cate_spring = () => {
     return (
@@ -9,13 +10,23 @@ const cate_spring = () => {
                 <NavBar />
             </div>
             <div className="content">
-
+                <div className="title">
+                    Spring
+                </div>
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
+                <ImageCard />
             </div>
 
-            <div>
-            cate_spring
-            </div>
-s
         </div >
     )
 }
