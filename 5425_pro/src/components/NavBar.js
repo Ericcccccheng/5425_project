@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { PiWindowsLogoBold } from "react-icons/pi";
 import { MdSearch } from "react-icons/md";
 import "../css/NavBar.css"
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { RiUpload2Fill } from "react-icons/ri";
 import { FaCirclePlus } from "react-icons/fa6";
 
@@ -70,7 +70,9 @@ const NavBar = () => {
                 <div className="fun_pop1">
                     <div className="button-container">
                         <div className="column">
+                            <Link to="/toSpring"> 
                             <button>Button 1</button>
+                            </Link>
                             <button>Button 2</button>
                             <button>Button 3</button>
                         </div>

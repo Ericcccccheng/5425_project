@@ -15,6 +15,9 @@
     width: 82%;
     max-width: 2000px;
     min-width: 1300px;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .two_sides {
