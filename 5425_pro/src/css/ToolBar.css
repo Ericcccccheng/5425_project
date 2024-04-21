@@ -1,0 +1,324 @@
+.toolbar {
+    position: fixed;
+    left: 8%;
+    height: 5%;
+    width: 84%;
+    display: grid;
+    grid-template-columns: 30% 24% 25% 1% 10% 10%;
+    background-color: #f8f9fa;
+    max-width: 2000px;
+    min-width: 1300px;
+    z-index: 1000;
+}
+
+.media_icon {
+    display: flex;
+    align-items: center;
+    /* logo position at centre of the toolbar */
+    margin-left: 15%;
+    position: relative;
+    /* relative to add shadow */
+}
+
+.logo {
+    height: 70%;
+    width: 10%;
+    margin-right: 10%;
+    border-radius: 43%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    /* initial logo */
+}
+
+.logo:hover {
+    transform: scale(1.03);
+    /* image zoom in 10% */
+    background-color: rgba(226, 229, 232, 0.895);
+    box-shadow: 0 5px 15px rgb(135, 206, 250);
+    /* add shadow */
+}
+
+.react_icon {
+    height: 100%;
+    width: 100%;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.phone_box {
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.phone_box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    height: 0%;
+    width: 0%;
+    background-color: #007aff;
+    transform: rotate(90deg);
+    opacity: 0;
+    transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.phone_box:hover:before {
+    height: 300%;
+    width: 0.3%;
+    opacity: 1;
+}
+
+/* .phone_box::before {
+    content: "";
+    position: absolute;
+    left: 28%;
+    top: 10%;
+    height: 80%;
+    width: 3px;
+    background-color: #000;
+} */
+
+.p1, .p2 {
+    display: inline-block;
+    font-family: Verdana;
+    font-size: 13px;
+    color: #555555;
+}
+
+.p1 {
+    font-weight: 1000;
+}
+
+.p2 {
+    margin-left: 3%;
+    font-weight: 300;
+}
+
+.email_box {
+    width: 49%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.email_box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    height: 0%;
+    width: 0%;
+    background-color: #007aff;
+    transform: rotate(90deg);
+    opacity: 0;
+    transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.email_box:hover:before {
+    height: 300%;
+    width: 0.3%;
+    opacity: 1;
+}
+
+/* .email_box::before {
+    content: "";
+    position: absolute;
+    left: 23.3%;
+    top: 10%;
+    height: 80%;
+    width: 3.5px;
+    background-color: #000;
+} */
+
+/* .contact_button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+} */
+
+/* .contact {
+    margin-right: 2%;
+    border: transparent;
+    border-radius: 10px;
+    width: 5%;
+    height: 80%;
+    background-color: transparent;
+    transition: background-color 0.1s ease;
+} */
+
+/* .contact_on {
+    border: transparent;
+    border-radius: 10px;
+    color: white;
+    width: 180%;
+    height: 100%;
+    background-color: #007aff;
+} */
+/* 
+.contact_on:hover {
+    color: #000;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 4px rgb(135, 206, 250);
+} */
+
+/* .contact_off {
+    border: transparent;
+    border-radius: 10px;
+    color: black;
+    width: 180%;
+    height: 100%;
+    box-shadow: 0 4px 4px rgb(135, 206, 250);
+    background-color: rgb(255, 255, 255);
+} */
+
+/* .contact_off:hover {
+    color: white;
+    background-color: #007aff;
+    box-shadow: 0 4px 4px rgb(135, 206, 250);
+} */
+
+/* .contact_box {
+    left: 50%;
+    height: 4.5%;
+    width: 30%;
+    position: fixed;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 4px rgb(135, 206, 250);
+} */
+
+.language_button {
+    display: flex;
+    align-items: center;
+    /* logo position at centre of the toolbar */
+    justify-content: center;
+    position: relative;
+    /* relative to add shadow  #007aff*/
+}
+
+.language {
+    display: flex;
+    font-family: Verdana;
+    font-weight: 550;
+    font-size: 1rem;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background-color: #007aff;
+    border: transparent;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+    transition: background-color 0.1s ease;
+}
+
+.language:hover {
+    color: #007aff;
+    font-weight: 550;
+    background-color: White;
+    box-shadow: 0 4px 4px rgb(135, 206, 250);
+}
+
+.language_button.clicked button {
+    color: #000;
+    box-shadow: 0 4px 4px rgb(135, 206, 250);
+    background-color: rgb(255, 255, 255);
+    /* set button colour */
+}
+
+.popup {
+    top: 5%;
+    height: 30%;
+    width: 9%;
+    position: fixed;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* at top layer */
+}
+
+.language_box {
+    display: flex;
+    font-family: Verdana;
+    font-weight: 700;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: Black;
+    border-radius: 10px;
+    margin-top: 7%;
+    margin-left: 10%;
+    width: 80%;
+    height: 20%;
+}
+
+.language_box:hover {
+    color: white;
+    background-color: rgb(135, 206, 250);
+}
+
+.request{
+    display: flex;
+    align-items: center;
+    /* logo position at centre of the toolbar */
+    justify-content: center;
+    position: relative;
+}
+
+.request_button {
+    display: flex;
+    font-family: Verdana;
+    font-weight: 550;
+    font-size: 1rem;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background-color: #007aff;
+    border: transparent;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+    transition: background-color 0.1s ease;
+}
+
+.request_button_selected {
+    background-color: white;
+    color: black;
+}
+
+.request_button_selected:hover {
+    color: black;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 4px rgb(135, 206, 250);
+}
+
+
+.request_button:hover {
+    color: #007aff;
+    font-weight: 550;
+    background-color: White;
+    box-shadow: 0 4px 4px rgb(135, 206, 250);
+}
+
+.req_link {
+    width: 100%;
+    height: 100%;
+    margin-top: 7%;
+    text-decoration: none;
+}
