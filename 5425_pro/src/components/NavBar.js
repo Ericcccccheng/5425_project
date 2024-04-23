@@ -5,6 +5,7 @@ import "../css/NavBar.css"
 import { Link } from "react-router-dom";
 import { RiUpload2Fill } from "react-icons/ri";
 import { FaCirclePlus } from "react-icons/fa6";
+import logo from '../image/logo3.png';
 
 const NavBar = () => {
 
@@ -85,7 +86,7 @@ const NavBar = () => {
         <>
             <div className="brand_logo">
                 <Link to="/main" className="logo_link">
-                    <PiWindowsLogoBold className="react_icon" />
+                    <img src={logo} alt="Logo" className="react_icon"/>
                 </Link>
             </div>
             <div className="function1">
@@ -112,9 +113,9 @@ const NavBar = () => {
                 <div className="fun_pop2">
                     <div className="button-container1">
                         <div className="column1">
-                            <button>Button 1</button>
-                            <button>Button 2</button>
-                            <button>Button 3</button>
+                            <button>1920*1080</button>
+                            <button>2560*1440</button>
+                            <button>3840*2160</button>
                         </div>
                     </div>
                 </div>
