@@ -7,6 +7,8 @@ import { RiUpload2Fill } from "react-icons/ri";
 import { FaCirclePlus } from "react-icons/fa6";
 import logo from '../image/logo3.png';
 
+const { spawn } = window.require('child_process');
+
 const NavBar = () => {
 
     const [expanded, setExpanded] = useState(false);
@@ -15,6 +17,27 @@ const NavBar = () => {
     const popupRef = useRef(null);
     const ImagePopupRef = useRef(null);
     const [imageData, setImageData] = useState(null);
+
+    const [pythonOutput, setPythonOutput] = useState("");
+
+    const runPythonScript = () => {
+        const pythonProcess = spawn('python', ['src/image retrieval algorithm/algorithm.py']);
+
+        pythonProcess.stdout.on('data', (data) => {
+            console.log(`Python script stdout: ${data}`);
+            setPythonOutput(data.toString()); // 更新状态以显示 Python 脚本的输出
+        });
+
+        pythonProcess.stderr.on('data', (data) => {
+            console.error(`Python script stderr: ${data}`);
+            // 处理 Python 脚本的错误信息
+        });
+
+        pythonProcess.on('close', (code) => {
+            console.log(`Python script process exited with code ${code}`);
+            // 处理 Python 进程关闭事件
+        });
+    }
 
     const openPopup = (event) => {
         event.stopPropagation();
@@ -122,24 +145,6 @@ const NavBar = () => {
             </div>
 
             <div></div>
-            {/* <div className="function3">
-                Function 3
-                <div className="fun_pop3">
-                    <div className="button-container">
-                        <div className="title"> Function 3 Title</div>
-                        <div className="column">
-                            <button>Button 1</button>
-                            <button>Button 2</button>
-                            <button>Button 3</button>
-                        </div>
-                        <div className="column">
-                            <button>Button 4</button>
-                            <button>Button 5</button>
-                            <button>Button 6</button>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
 
             <div></div>
 
@@ -176,7 +181,8 @@ const NavBar = () => {
 
                                         <div className="up_container">
                                             <button className="up_back">Back</button>
-                                            <button className="up_finish">Finish</button>
+                                            <button className="up_finish" onClick={runPythonScript}>Finish</button>
+                                            <div>Python output: {pythonOutput}</div>
                                         </div>
 
                                     </>
