@@ -7,8 +7,6 @@ import { RiUpload2Fill } from "react-icons/ri";
 import { FaCirclePlus } from "react-icons/fa6";
 import logo from '../image/logo3.png';
 
-const { spawn } = window.require('child_process');
-
 const NavBar = () => {
 
     const [expanded, setExpanded] = useState(false);
@@ -18,26 +16,8 @@ const NavBar = () => {
     const ImagePopupRef = useRef(null);
     const [imageData, setImageData] = useState(null);
 
-    const [pythonOutput, setPythonOutput] = useState("");
-
-    const runPythonScript = () => {
-        const pythonProcess = spawn('python', ['src/image retrieval algorithm/algorithm.py']);
-
-        pythonProcess.stdout.on('data', (data) => {
-            console.log(`Python script stdout: ${data}`);
-            setPythonOutput(data.toString()); // 更新状态以显示 Python 脚本的输出
-        });
-
-        pythonProcess.stderr.on('data', (data) => {
-            console.error(`Python script stderr: ${data}`);
-            // 处理 Python 脚本的错误信息
-        });
-
-        pythonProcess.on('close', (code) => {
-            console.log(`Python script process exited with code ${code}`);
-            // 处理 Python 进程关闭事件
-        });
-    }
+    // State to store similar images
+    const [similarImages, setSimilarImages] = useState([]);
 
     const openPopup = (event) => {
         event.stopPropagation();
@@ -85,6 +65,27 @@ const NavBar = () => {
             setImageData(imageData);
         };
         reader.readAsDataURL(file);
+    };
+
+    const finishUpload = () => {
+        const imageData = localStorage.getItem('uploadedImage');
+        if (imageData) {
+            fetch('http://localhost:8080/run-python', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ imageData })
+            })
+            .then(response => response.json())
+            .then(data => {
+                setSimilarImages(data.similarImages);
+                closePopup();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
     };
 
     const handleClickOutside = (event) => {
@@ -181,8 +182,7 @@ const NavBar = () => {
 
                                         <div className="up_container">
                                             <button className="up_back">Back</button>
-                                            <button className="up_finish" onClick={runPythonScript}>Finish</button>
-                                            <div>Python output: {pythonOutput}</div>
+                                            <button className="up_finish" onClick={finishUpload}>Finish</button>
                                         </div>
 
                                     </>
