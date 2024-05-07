@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { PiWindowsLogoBold } from "react-icons/pi";
 import { MdSearch } from "react-icons/md";
 import "../css/NavBar.css"
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { RiUpload2Fill } from "react-icons/ri";
 import { FaCirclePlus } from "react-icons/fa6";
 import logo from '../image/logo3.png';
@@ -77,14 +77,15 @@ const NavBar = () => {
                 },
                 body: JSON.stringify({ imageData })
             })
-            .then(response => response.json())
-            .then(data => {
-                setSimilarImages(data.similarImages);
-                closePopup();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+                .then(response => response.json())
+                .then(data => {
+                    localStorage.setItem('similarImages', JSON.stringify(data.similarImages));
+                    setSimilarImages(data.similarImages);
+                    window.location.href = "/toUpload"
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         }
     };
 
@@ -110,7 +111,7 @@ const NavBar = () => {
         <>
             <div className="brand_logo">
                 <Link to="/main" className="logo_link">
-                    <img src={logo} alt="Logo" className="react_icon"/>
+                    <img src={logo} alt="Logo" className="react_icon" />
                 </Link>
             </div>
             <div className="function1">
@@ -183,6 +184,7 @@ const NavBar = () => {
                                         <div className="up_container">
                                             <button className="up_back">Back</button>
                                             <button className="up_finish" onClick={finishUpload}>Finish</button>
+                                            
                                         </div>
 
                                     </>
