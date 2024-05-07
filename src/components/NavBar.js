@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { PiWindowsLogoBold } from "react-icons/pi";
 import { MdSearch } from "react-icons/md";
 import "../css/NavBar.css"
 import { Link } from 'react-router-dom';
@@ -119,11 +118,17 @@ const NavBar = () => {
                 <div className="fun_pop1">
                     <div className="button-container">
                         <div className="column">
-                            <Link to="/toSpring">
-                                <button>Spring</button>
+                            <Link to="/toAnimal">
+                                <button>Animal</button>
                             </Link>
-                            <button>Button 2</button>
-                            <button>Button 3</button>
+
+                            <Link to="/toCar">
+                                <button>Car</button>
+                            </Link>
+
+                            <Link to="/toPlant">
+                                <button>Plant</button>
+                            </Link>
                         </div>
                         <div className="column">
                             <button>Button 4</button>
@@ -184,7 +189,7 @@ const NavBar = () => {
                                         <div className="up_container">
                                             <button className="up_back">Back</button>
                                             <button className="up_finish" onClick={finishUpload}>Finish</button>
-                                            
+
                                         </div>
 
                                     </>

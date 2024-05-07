@@ -1,6 +1,8 @@
 import React from 'react';
 import MainPage from './pages/MainPage';
-import Spring from './pages/cate_spring';
+import Animal from './pages/cate_animal';
+import Car from './pages/cate_car';
+import Plant from './pages/cate_plant';
 import Upload from './pages/upload_re';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -10,10 +12,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<MainPage/>} />
-          <Route path="/toSpring" element={<Spring />} />
+          <Route path="/toAnimal" element={<Animal />} />
+          <Route path="/toCar" element={<Car />} />
+          <Route path="/toPlant" element={<Plant />} />
           <Route path="/main" element={<MainPage />} />
           <Route path="/toUpload" element={<Upload />} />
-         
         </Routes>
       </Router>
     </div>

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import "../css/upload_re.css";
-import '../css/ImageCard.css'
 import ImageCard from "../components/ImageCard";
+import '../css/ImageCard.css'
 
-const UploadRe  = () => {
+
+const UploadRe = () => {
 
     const [similarImages, setSimilarImages] = useState([]);
 
@@ -24,15 +25,13 @@ const UploadRe  = () => {
                 <div className="title">
                     Upload Wallpaper Search:
                 </div>
-                <div className="image-container">
-                    {similarImages.map((image, index) => (
-                        <img key={index} src={image} alt={`Similar Image ${index}`} />
-                    ))}
-                </div>
+                {similarImages.map((image, index) => (
+                    <ImageCard key={index} imageUrl={image} index={index} alt={`Similar Image ${index}`} />
+                ))}
             </div>
 
         </div >
     )
 }
 
-export default UploadRe ;
+export default UploadRe;
