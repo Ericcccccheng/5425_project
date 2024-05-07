@@ -131,9 +131,9 @@ const NavBar = () => {
                             </Link>
                         </div>
                         <div className="column">
-                            <button>Button 4</button>
-                            <button>Button 5</button>
-                            <button>Button 6</button>
+                            <Link to="/toSpace">
+                                <button>Space</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
