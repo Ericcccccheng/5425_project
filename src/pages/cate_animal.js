@@ -25,8 +25,8 @@ const cate_animal = () => {
             <div className="navbar">
                 <NavBar />
             </div>
-            <div className="content">
-                <div className="title">
+            <div className="content_animal">
+                <div className="title_animal">
                     Animal
                 </div>
                 {images.map((imageUrl, index) => (

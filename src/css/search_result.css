@@ -1,4 +1,4 @@
-.cate_animal {
+.search_result {
     position: absolute;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     overflow: auto;
 }
 
-.content_animal {
+.content_re {
     position: relative;
     left: 9%;
     width: 82%;
@@ -19,12 +19,12 @@
     flex-wrap: wrap;
 }
 
-.title_animal {
-    width: 30%;
+.title_re {
+    width: 35%;
     font-weight: bold;
     margin-top: 1%;
     margin-bottom: 1%;
-    margin-left: 45%;
+    margin-left: 39%;
     font-size: 300%;
     z-index: 1000;
 }

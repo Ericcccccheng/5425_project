@@ -21,8 +21,8 @@ const UploadRe = () => {
             <div className="navbar">
                 <NavBar />
             </div>
-            <div className="content">
-                <div className="title">
+            <div className="content_up">
+                <div className="title_up">
                     Upload Wallpaper Search:
                 </div>
                 {similarImages.map((image, index) => (

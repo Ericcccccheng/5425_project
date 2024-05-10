@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import "../css/cate_animal.css";
+import "../css/cate_space.css";
 import ImageCard from "../components/ImageCard";
 import image1 from '../image/space/space_1.jpg';
 import image2 from '../image/space/space_2.jpg';
@@ -21,12 +21,12 @@ const cate_space = () => {
     const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
 
     return (
-        <div className="cate_animal">
+        <div className="cate_space">
             <div className="navbar">
                 <NavBar />
             </div>
-            <div className="content">
-                <div className="title">
+            <div className="content_space">
+                <div className="title_space">
                     Space
                 </div>
                 {images.map((imageUrl, index) => (

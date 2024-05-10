@@ -8,9 +8,8 @@
     overflow: auto;
 }
 
-.content {
+.content_up {
     position: relative;
-    top: 12.5%;
     left: 9%;
     width: 82%;
     max-width: 2000px;
@@ -20,8 +19,8 @@
     flex-wrap: wrap;
 }
 
-.title {
-    width: 100%;
+.title_up {
+    width: 50%;
     font-weight: bold;
     margin-top: 1%;
     margin-bottom: 1%;

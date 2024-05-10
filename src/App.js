@@ -5,6 +5,7 @@ import Car from './pages/cate_car';
 import Plant from './pages/cate_plant';
 import Space from './pages/cate_space';
 import Upload from './pages/upload_re';
+import SearchResult from './pages/search_result';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/toSpace" element={<Space />} />
           <Route path="/main" element={<MainPage />} />
           <Route path="/toUpload" element={<Upload />} />
+          <Route path="/SearchResult" element={<SearchResult />} />
         </Routes>
       </Router>
     </div>
