@@ -7,7 +7,7 @@ const SearchResult = () => {
     const searchResults = JSON.parse(localStorage.getItem('searchResults')) || [];
 
     return (
-        <div className="search_result"> 
+        <div className="search_result">
             <div className="navbar">
                 <NavBar />
             </div>
